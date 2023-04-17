@@ -48,20 +48,22 @@ heart.addEventListener("click",function(){
     (d=document.createElement("li")).setAttribute("data-num",b),
     d.innerHTML=b+" has been liked <span>1</span> time",
     c.appendChild(d)}),
-    pause.addEventListener("click",function(){
-      playing?(playing=!1,
-      clearInterval(interval),
-      this.innerText="resume")
-      :
-      (playing=!0,interval=timer(),
-      this.innerText="pause"),
-      [].concat(_toConsumableArray(document.getElementsByTagName("button"))).forEach(function(a){
-        "pause"!==a.id&&(a.disabled=!playing)})}),
-      commentForm.addEventListener("submit",function(a){
-        a.preventDefault();
-        var b=this.children[0],
-        c=b.value;
-        b.value="";
-        var d=document.querySelector(".comments"),
-        e=document.createElement("p");e.innerText=c,d.appendChild(e)}
-        );
+
+pause.addEventListener("click",function(){
+    playing?(playing=!1,
+    clearInterval(interval),
+    this.innerText="resume")
+    :
+    (playing=!0,interval=timer(),
+    this.innerText="pause"),
+    [].concat(_toConsumableArray(document.getElementsByTagName("button"))).forEach(function(a){
+      "pause"!==a.id&&(a.disabled=!playing)})}),
+
+commentForm.addEventListener("submit",function(a){
+    a.preventDefault();
+    var b=this.children[0],
+    c=b.value;
+    b.value="";
+    var d=document.querySelector(".comments"),
+    e=document.createElement("p");e.innerText=c,d.appendChild(e)}
+);
